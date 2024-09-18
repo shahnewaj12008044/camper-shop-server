@@ -21,9 +21,15 @@ const getSingleProductFromDB = async (id: string) => {
   return result;
 };
 
+const getFeaturedProductsFormDB = async () => {
+  const result = await Product.find({ isFeatured: true });
+  return result;
+};
+
 
 export const ProductServices = {
     createProductIntoDB,
     getAllProductsFromDB,
     getSingleProductFromDB,
+    getFeaturedProductsFormDB,
 }

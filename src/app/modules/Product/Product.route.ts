@@ -11,6 +11,7 @@ router.post(
   ProductController.createProduct,
 );
 router.get('/', ProductController.getAllProducts);
+router.get("/featuredProducts",ProductController.getFeaturedProducts );
 router.get('/:id', ProductController.getSingleProduct);
 
 export const ProductRoute = router;

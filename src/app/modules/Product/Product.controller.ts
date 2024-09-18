@@ -37,9 +37,21 @@ const getSingleProduct = catchAsync(async(req : Request, res: Response)=>{
     })
 })
 
+const getFeaturedProducts = catchAsync(async (req, res) => {
+    const result = await ProductServices.getFeaturedProductsFormDB();
+   
+    sendResponse(res,{
+        status: httpStatus.OK,
+        success: true,
+        message: "Featured Product Data  is retrived Successfully!",
+        data: result,
+    })
+  });
+
 
 export const ProductController = {
     createProduct,
     getAllProducts,
     getSingleProduct,
+    getFeaturedProducts,
 }
