@@ -26,10 +26,25 @@ const getFeaturedProductsFormDB = async () => {
   return result;
 };
 
+const updateProductFromDB = async (id: string, payload: Partial<TProduct>) => {
+  const result = await Product.findByIdAndUpdate(id, payload, {
+    new: true,
+    runValidators: true,
+  });
+  return result;
+};
+
+const deleteProductFromDB = async (id: string) => {
+  const result = await Product.findByIdAndUpdate(id,{isDeleted:true},{new:true});
+  return result;
+};
+
 
 export const ProductServices = {
     createProductIntoDB,
     getAllProductsFromDB,
     getSingleProductFromDB,
     getFeaturedProductsFormDB,
+    updateProductFromDB,
+    deleteProductFromDB,
 }

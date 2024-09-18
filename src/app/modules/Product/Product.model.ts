@@ -37,10 +37,21 @@ const productSchema = new Schema<TProduct>(
       type: Boolean,
       default: false,
     },
+    isDeleted:{
+        type:Boolean,
+        default:false,
+    }
   },
   {
     timestamps: true,
   }
 );
+
+productSchema.pre('find',async function () {
+    this.find({isDeleted:{$ne:true}})
+})
+productSchema.pre('findOne',async function () {
+    this.find({isDeleted:{$ne:true}})
+})
 
 export const Product = model<TProduct>("Product", productSchema);

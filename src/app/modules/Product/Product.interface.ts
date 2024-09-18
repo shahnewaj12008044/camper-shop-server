@@ -7,5 +7,6 @@ export type TProduct = {
     image: string;
     ratings: number;
     isFeatured?: boolean;
+    isDeleted?: boolean;
   };
   

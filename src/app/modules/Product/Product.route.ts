@@ -14,4 +14,10 @@ router.get('/', ProductController.getAllProducts);
 router.get("/featuredProducts",ProductController.getFeaturedProducts );
 router.get('/:id', ProductController.getSingleProduct);
 
+router.put(
+    "/:id",
+    validateRequest(productValidations.updateProductValidation),ProductController.updateProduct
+  );
+  router.delete("/:id", ProductController.deleteProduct);
+
 export const ProductRoute = router;
