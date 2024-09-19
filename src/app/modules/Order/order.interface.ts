@@ -13,5 +13,5 @@ export type TOrder = {
 
   products: [ TOrderedProducts ];
   cashOnDelivery: boolean;
-  onlinePayment:boolean;
+
 };

@@ -38,10 +38,7 @@ const orderSchema = new Schema<TOrder>(
       type: Boolean,
       required: true,
     },
-    onlinePayment: {
-      type: Boolean,
-      required: true,
-    },
+  
     products: [ TOrderedProducts ],
   },
   {

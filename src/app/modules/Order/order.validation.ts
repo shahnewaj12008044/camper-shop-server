@@ -12,7 +12,7 @@ const createOrderValidation = z.object({
     number: z.string({ required_error: "Number is Required" }),
     address: z.string({ required_error: "address is Required" }),
     cashOnDelivery: z.boolean(),
-    onlinePayment: z.boolean(),
+   
     products: z.array(TOrderProductsValidationSchema),
   }),
 });
