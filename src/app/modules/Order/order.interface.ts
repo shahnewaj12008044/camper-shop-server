@@ -10,7 +10,7 @@ export type TOrder = {
   email: string;
   number: string;
   address: string;
-
+  totalPrice: number;
   products: [ TOrderedProducts ];
   cashOnDelivery: boolean;
 

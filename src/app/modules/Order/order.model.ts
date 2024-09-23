@@ -33,6 +33,10 @@ const orderSchema = new Schema<TOrder>(
       type: String,
       required: true,
     },
+    totalPrice: {
+      type: Number,
+      required: true,
+    },
 
     cashOnDelivery: {
       type: Boolean,

@@ -11,6 +11,7 @@ const createOrderValidation = z.object({
     email: z.string({ required_error: "Email is Required" }),
     number: z.string({ required_error: "Number is Required" }),
     address: z.string({ required_error: "address is Required" }),
+    totalPrice:z.number(),
     cashOnDelivery: z.boolean(),
    
     products: z.array(TOrderProductsValidationSchema),
